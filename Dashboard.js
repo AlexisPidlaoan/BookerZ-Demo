@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { EventCard, EventDetails } from './Event';
+import Notifications from './Notifications';
 import Sidebar from './Sidebar';
 import BottomNav from './BottomNav';
 import EventCalendar from './EventCalendar';
