@@ -40,5 +40,6 @@ An event booking web app built with React (Expo Snack).
 
 ## Team
 
-- Zeyyyyy
-- AlexisPidlaoan
+- Klein C. Balazon
+- Alexis B. Pidlaoan
+- Riccir B. Catimon
