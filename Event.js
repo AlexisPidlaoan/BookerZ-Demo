@@ -81,49 +81,4 @@ export const EventDetails = ({ event, onBack }) => {
   );
 };
 
-const styles = {
-  container: { height: '100%', overflowY: 'auto', backgroundColor: '#fff' },
-  header: { display: 'flex', alignItems: 'center', padding: '15px 20px', borderBottom: '1px solid #eee' },
-  headerTitle: { margin: '0 0 0 15px', fontSize: '18px' },
-  backBtn: { background: 'none', border: 'none', fontSize: '24px', cursor: 'pointer' },
-  
-  heroImage: { width: '100%', height: '180px', backgroundColor: '#333', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px' },
-  
-  // Middle Social Proof Styles
-  socialProofSection: { 
-    textAlign: 'center', 
-    padding: '15px 0', 
-    backgroundColor: '#fff', 
-    borderBottom: '1px solid #f0f0f0' 
-  },
-  sectionLabel: { fontWeight: 'bold', fontSize: '14px', marginBottom: '8px', color: '#333' },
-  attendeeCount: { 
-    backgroundColor: '#f8f9fa', 
-    padding: '8px 20px', 
-    borderRadius: '20px', 
-    border: '1px solid #eee', 
-    display: 'inline-block' 
-  },
-
-  detailsContent: { padding: '20px' },
-  mainInfo: { marginBottom: '20px' },
-  eventTitle: { fontSize: '24px', marginBottom: '10px' },
-  eventMeta: { color: '#555', margin: '5px 0' },
-  
-  paymentSection: { marginBottom: '25px' },
-  paymentOptions: { display: 'flex', gap: '10px', flexWrap: 'wrap' },
-  paymentBtn: { padding: '8px 15px', borderRadius: '20px', border: 'none', fontSize: '12px', cursor: 'pointer', transition: '0.2s' },
-  payUsing: { marginTop: '10px', fontSize: '13px' },
-
-  ctaButton: { width: '100%', padding: '16px', color: '#fff', border: 'none', borderRadius: '12px', marginTop: '10px', cursor: 'pointer', fontWeight: 'bold', fontSize: '16px' },
-
-  // Card Styles for Dashboard
-  card: { border: '1px solid #eee', borderRadius: '15px', padding: '12px', marginBottom: '15px', cursor: 'pointer', display: 'flex', gap: '15px', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' },
-  imagePlaceholder: { width: '80px', height: '80px', backgroundColor: '#eee', borderRadius: '10px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' },
-  cardInfo: { flex: 1 },
-  cardTitle: { margin: '0 0 5px 0', fontSize: '16px' },
-  categoryTag: { color: '#007bff', fontSize: '0.8em', fontWeight: 'bold' },
-  cardPrice: { margin: '5px 0 0 0', fontWeight: 'bold' }
-};
-
 export default EventDetails;
