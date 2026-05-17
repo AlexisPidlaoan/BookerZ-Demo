@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.css'; // Add this line
+import './styles.css'; 
 import LogIn from './Login';
 import Dashboard from './Dashboard';
 
@@ -7,7 +7,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div className="app-frame"> {/* Changed from style to className */}
+    <div className="app-frame"> 
       {isLoggedIn ? (
         <Dashboard />
       ) : (
@@ -16,3 +16,5 @@ function App() {
     </div>
   );
 }
+
+export default App;
