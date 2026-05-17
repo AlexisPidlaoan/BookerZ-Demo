@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 // Component for the list item (Explore Page)
 export const EventCard = ({ title, category, price, onSelect }) => {
   return (
-    <div style={styles.card} onClick={onSelect}>
-      <div style={styles.imagePlaceholder}>Event Logo</div>
-      <div style={styles.cardInfo}>
-        <h3 style={styles.cardTitle}>{title}</h3>
-        <p style={styles.categoryTag}>{category}</p>
-        <p style={styles.cardPrice}>Starting at: ₱{price}</p>
+    <div className="event-card" onClick={onSelect}>
+      <div className="image-placeholder" style={{ width: '60px', height: '60px', backgroundColor: '#ddd', borderRadius: '8px' }}>Logo</div>
+      <div className="event-card-info">
+        <h3 className="event-card-title">{title}</h3>
+        <p className="category-tag">{category}</p>
+        <p className="event-card-price">Starting at: ₱{price}</p>
       </div>
     </div>
   );
@@ -20,62 +20,70 @@ export const EventDetails = ({ event, onBack }) => {
   const [paymentMethod, setPaymentMethod] = useState('GCash');
 
   return (
-    <div style={styles.container}>
+    <div className="dashboard-container">
       {/* Header with Back Button */}
-      <div style={styles.header}>
-        <button onClick={onBack} style={styles.backBtn}>←</button>
-        <h2 style={styles.headerTitle}>Event Details</h2>
+      <div className="calendar-header">
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <button onClick={onBack} className="rect-button" style={{ width: 'auto', padding: '5px 10px', marginRight: '10px' }}>←</button>
+          <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: 0 }}>Event Details</h2>
+        </div>
       </div>
 
-      {/* Hero Image */}
-      <div style={styles.heroImage}>Hero Image / Logo</div>
-      
-      {/* Social Proof Section - MOVED TO MIDDLE */}
-      <div style={styles.socialProofSection}>
-        <p style={styles.sectionLabel}>People Going</p>
-        <div style={styles.attendeeCount}>👤 {attendees}</div>
-      </div>
-
-      <div style={styles.detailsContent}>
-        {/* Event Header Info */}
-        <div style={styles.mainInfo}>
-          <h1 style={styles.eventTitle}>{event.title}</h1>
-          <p style={styles.eventMeta}>📅 12/4/2026</p>
-          <p style={styles.eventMeta}>📍 Bacolod, Philippines</p>
-          <p style={styles.eventMeta}>👤 {event.organizer} (Organizer)</p>
-        </div>
-
-        {/* Payment Methods Section */}
-        <div style={styles.paymentSection}>
-          <p style={styles.sectionLabel}>Mode of payments</p>
-          <div style={styles.paymentOptions}>
-            {['GCash', 'Maya', 'Bank Payment'].map((method) => (
-              <button 
-                key={method}
-                onClick={() => setPaymentMethod(method)}
-                style={{
-                  ...styles.paymentBtn,
-                  backgroundColor: paymentMethod === method ? '#000' : '#f0f0f0',
-                  color: paymentMethod === method ? '#fff' : '#000'
-                }}
-              >
-                {method}
-              </button>
-            ))}
-          </div>
-          <p style={styles.payUsing}>Pay Using: <strong>{paymentMethod}</strong></p>
-        </div>
+      <div className="main-content">
+        {/* Hero Image */}
+        <div className="details-hero">Hero Image / Logo</div>
         
-        {/* Booking CTA */}
-        <button 
-          style={{
-            ...styles.ctaButton, 
-            backgroundColor: event.price > 500 ? '#ff4d4d' : '#007bff' 
-          }}
-          onClick={() => alert(`Redirecting to ${paymentMethod}...`)}
-        >
-          Book for ₱{event.price}
-        </button>
+        {/* Social Proof Section */}
+        <div className="social-proof-section">
+          <p style={{ fontSize: '12px', color: '#999', margin: '0 0 5px 0' }}>People Going</p>
+          <div style={{ fontSize: '20px', fontWeight: 'bold' }}>👤 {attendees}</div>
+        </div>
+
+        <div style={{ padding: '20px' }}>
+          {/* Event Header Info */}
+          <div style={{ marginBottom: '20px' }}>
+            <h1 style={{ fontSize: '24px', margin: '0 0 10px 0' }}>{event.title}</h1>
+            <p style={{ color: '#555', margin: '5px 0' }}>📅 12/4/2026</p>
+            <p style={{ color: '#555', margin: '5px 0' }}>📍 Bacolod, Philippines</p>
+            <p style={{ color: '#555', margin: '5px 0' }}>👤 {event.organizer} (Organizer)</p>
+          </div>
+
+          {/* Payment Methods Section */}
+          <div style={{ marginBottom: '25px' }}>
+            <p style={{ fontSize: '12px', color: '#999', textTransform: 'uppercase', marginBottom: '10px' }}>Mode of payments</p>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              {['GCash', 'Maya', 'Bank Payment'].map((method) => (
+                <button 
+                  key={method}
+                  onClick={() => setPaymentMethod(method)}
+                  style={{
+                    padding: '8px 15px',
+                    borderRadius: '20px',
+                    border: 'none',
+                    fontSize: '12px',
+                    cursor: 'pointer',
+                    backgroundColor: paymentMethod === method ? '#000' : '#f0f0f0',
+                    color: paymentMethod === method ? '#fff' : '#000'
+                  }}
+                >
+                  {method}
+                </button>
+              ))}
+            </div>
+            <p style={{ marginTop: '10px', fontSize: '13px' }}>Pay Using: <strong>{paymentMethod}</strong></p>
+          </div>
+          
+          {/* Booking CTA */}
+          <button 
+            className="pay-button"
+            style={{
+              backgroundColor: event.price > 500 ? '#ff4d4d' : '#007bff' 
+            }}
+            onClick={() => alert(`Redirecting to ${paymentMethod}...`)}
+          >
+            Book for ₱{event.price}
+          </button>
+        </div>
       </div>
     </div>
   );
