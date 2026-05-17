@@ -25,39 +25,60 @@ const Dashboard = () => {
       case 'calendar':
         return <EventCalendar onBack={() => setCurrentPage('explore')} />;
       
+      case 'notifications':
+        return <Notifications onBack={() => setCurrentPage('explore')} />;
+      
       case 'details':
         return <EventDetails event={selectedEvent} onBack={() => setCurrentPage('explore')} />;
+
+      case 'profile':
+        return (
+          <div className="profile-container">
+            <div className="profile-avatar">👤</div>
+            <h2 className="profile-name">Alexis Pidlaoan</h2>
+            <p className="profile-bio">BSIT Student | NEU</p>
+            <div className="profile-stats">
+              <div className="stat-item"><span className="stat-value">5</span><span className="stat-label">Tickets</span></div>
+              <div className="stat-item"><span className="stat-value">12</span><span className="stat-label">Wishlist</span></div>
+            </div>
+          </div>
+        );
 
       case 'explore':
       default:
         return (
-          <div style={styles.container}>
-            <header style={styles.header}>
-              <h2 style={styles.logo}>BookerZ</h2>
+          <div className="dashboard-container">
+            <header className="calendar-header">
+              <h2 className="brand-title" style={{ margin: 0 }}>BookerZ</h2>
+              <div onClick={() => setCurrentPage('notifications')} style={{ cursor: 'pointer', fontSize: '20px' }}>🔔</div>
             </header>
-            <main style={styles.mainContent}>
-              <section style={styles.featuredSection}>
-                <div style={styles.horizontalScroll}>
+            
+            <main className="main-content">
+              <section style={{ padding: '10px 0' }}>
+                <div className="horizontal-scroll">
                   {events.slice(0, 3).map(event => (
-                    <div key={event.id} style={styles.bigSquare} onClick={() => {
+                    <div key={event.id} className="featured-card" onClick={() => {
                       setSelectedEvent(event);
                       setCurrentPage('details');
                     }}>
-                      <div style={styles.imagePlaceholder}>Event Image</div>
-                      <div style={styles.featuredInfo}>
-                        <h4>{event.title}</h4>
-                        <p>₱{event.price}</p>
+                      <div className="details-hero" style={{ height: '100%', borderRadius: '15px' }}>Event Image</div>
+                      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '15px', background: 'linear-gradient(transparent, rgba(0,0,0,0.8))', borderRadius: '0 0 15px 15px', color: '#fff' }}>
+                        <h4 style={{ margin: 0 }}>{event.title}</h4>
+                        <p style={{ margin: '5px 0 0 0' }}>₱{event.price}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </section>
-              <hr style={styles.divider} />
-              <div style={styles.pillContainer}>
-                <span style={styles.pillActive}>All</span>
-                {categories.map(cat => <span key={cat} style={styles.pill}>{cat}</span>)}
+
+              <hr style={{ border: 'none', borderBottom: '1px solid #eee', margin: '10px 20px' }} />
+              
+              <div className="pill-container">
+                <span className="pill pill-active">All</span>
+                {categories.map(cat => <span key={cat} className="pill">{cat}</span>)}
               </div>
-              <section style={styles.eventList}>
+
+              <section style={{ padding: '20px' }}>
                 {events.map(event => (
                   <EventCard 
                     key={event.id}
@@ -76,7 +97,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div style={styles.appFrame}>
+    <div className="app-frame">
       <Sidebar 
         isOpen={isSidebarOpen} 
         onClose={() => setIsSidebarOpen(false)} 
