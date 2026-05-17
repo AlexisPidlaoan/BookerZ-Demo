@@ -27,28 +27,4 @@ const BottomNav = ({ onMenuClick, onNavigate, currentPage }) => {
   );
 };
 
-const styles = {
-  bottomNav: { 
-    position: 'absolute', 
-    bottom: 0, 
-    left: 0, 
-    right: 0, 
-    height: '70px',
-    display: 'flex', 
-    justifyContent: 'space-around', 
-    alignItems: 'center', 
-    borderTop: '1px solid #eee', 
-    backgroundColor: '#fff', 
-    zIndex: 5 
-  },
-  navBtn: { 
-    display: 'flex', 
-    flexDirection: 'column', 
-    alignItems: 'center', 
-    cursor: 'pointer', 
-    fontSize: '20px',
-    transition: 'color 0.2s'
-  }
-};
-
 export default BottomNav;
