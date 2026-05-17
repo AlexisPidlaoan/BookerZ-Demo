@@ -45,20 +45,4 @@ const Profile = ({ onBack }) => {
   );
 };
 
-const styles = {
-container: { padding: '20px', height: '100%', position: 'relative', backgroundColor: '#fff', fontFamily: 'sans-serif' },  back: { background: 'none', border: 'none', fontSize: '16px', cursor: 'pointer', marginBottom: '16px', padding: 0 },
-  avatarCircle: { width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#ddd', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 10px' },
-  avatarText: { fontSize: '26px', fontWeight: 'bold', color: '#555' },
-  name: { fontSize: '18px', fontWeight: 'bold', textAlign: 'center', margin: '0 0 6px' },
-  followRow: { display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '12px' },
-  followText: { fontSize: '13px', color: '#555' },
-  editBtn: { display: 'block', margin: '0 auto 20px', border: '1px solid #aaa', borderRadius: '8px', padding: '6px 20px', background: 'none', cursor: 'pointer', fontSize: '13px' },
-  body: { overflowY: 'auto', paddingBottom: '60px' },
-  sectionTitle: { fontSize: '15px', fontWeight: 'bold', marginBottom: '6px', marginTop: '10px' },
-  aboutText: { fontSize: '13px', color: '#555', lineHeight: '1.6', margin: 0 },
-  tagsRow: { display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '8px' },
-  tag: { padding: '5px 12px', borderRadius: '15px', fontSize: '13px' },
-  bottomNav: { position: 'absolute', bottom: 0, left: 0, right: 0, display: 'flex', justifyContent: 'space-around', padding: '15px', borderTop: '1px solid #ddd', backgroundColor: '#fff', cursor: 'pointer' },
-};
-
 export default Profile;
