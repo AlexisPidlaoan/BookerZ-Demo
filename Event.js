@@ -62,8 +62,8 @@ export const EventDetails = ({ event, onBack }) => {
                     border: 'none',
                     fontSize: '12px',
                     cursor: 'pointer',
-                    backgroundColor: paymentMethod === method ? '#000' : '#f0f0f0',
-                    color: paymentMethod === method ? '#fff' : '#000'
+                    backgroundColor: paymentMethod === method ? '#36ADA3' : '#f0f4f8',
+                    color: paymentMethod === method ? '#fff' : '#121358'
                   }}
                 >
                   {method}
@@ -77,7 +77,7 @@ export const EventDetails = ({ event, onBack }) => {
           <button 
             className="pay-button"
             style={{
-              backgroundColor: event.price > 500 ? '#ff4d4d' : '#007bff' 
+              backgroundColor: event.price > 500 ? '#232F72' : '#36ADA3' 
             }}
             onClick={() => alert(`Redirecting to ${paymentMethod}...`)}
           >

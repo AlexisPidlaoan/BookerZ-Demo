@@ -90,12 +90,13 @@ const styles = {
   appFrame: {
     maxWidth: '400px',
     margin: '0 auto',
-    border: '1px solid #000',
+    border: '1px solid #121358',
     height: '90vh',
     overflow: 'hidden',
     position: 'relative',
     backgroundColor: '#fff',
     fontFamily: 'sans-serif',
+    color: '#121358',
   },
   container: {
     height: '100%',
@@ -116,12 +117,12 @@ const styles = {
   },
   welcomeText: {
     fontSize: '16px',
-    color: '#666',
+    color: '#2F578A',
     margin: '5px 0 0 0',
   },
   wireframeCard: {
-    backgroundColor: '#bfbfbf',
-    border: '1px solid #000',
+    backgroundColor: '#fff',
+    border: '1px solid #2F578A',
     padding: '20px',
     display: 'flex',
     flexDirection: 'column',
@@ -129,6 +130,8 @@ const styles = {
     alignItems: 'center',
     boxSizing: 'border-box',
     width: '100%',
+    borderRadius: '12px',
+    boxShadow: '0 4px 6px rgba(18,19,88,0.1)',
   },
   cardTitle: {
     margin: 0,
@@ -144,23 +147,27 @@ const styles = {
   rectButton: {
     width: '100%',
     padding: '12px',
-    border: '2px solid #000',
-    backgroundColor: '#fff',
+    border: 'none',
+    borderRadius: '8px',
+    backgroundColor: '#36ADA3',
+    color: '#fff',
     cursor: 'pointer',
     fontWeight: 'bold',
   },
   wireframeLabel: {
     fontSize: '11px',
-    color: '#333',
+    color: '#2F578A',
     marginTop: '4px',
     textTransform: 'uppercase',
   },
   rectInput: {
     width: '100%',
     padding: '12px',
-    border: '2px solid #000',
-    backgroundColor: '#fff',
+    border: '1px solid #2F578A',
+    borderRadius: '8px',
+    backgroundColor: '#f8fafc',
     boxSizing: 'border-box',
+    color: '#121358',
   },
   bottomNav: {
     position: 'absolute',
@@ -171,17 +178,19 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    borderTop: '1px solid #eee',
+    borderTop: '1px solid #2F578A',
     backgroundColor: '#fff',
   },
   navItem: {
     cursor: 'pointer',
     fontSize: '14px',
+    color: '#2F578A',
   },
   navItemActive: {
     cursor: 'pointer',
     fontSize: '14px',
     fontWeight: 'bold',
+    color: '#36ADA3',
   }
 };
 
