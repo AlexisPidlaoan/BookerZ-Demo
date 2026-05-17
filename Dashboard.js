@@ -91,22 +91,4 @@ const Dashboard = () => {
   );
 };
 
-const styles = {
-  appFrame: { maxWidth: '400px', margin: '0 auto', border: '1px solid #000', height: '90vh', overflow: 'hidden', position: 'relative', backgroundColor: '#fff', fontFamily: 'sans-serif' },
-  container: { height: '100%', display: 'flex', flexDirection: 'column' },
-  header: { padding: '15px 20px 5px', textAlign: 'center' },
-  logo: { fontSize: '24px', fontWeight: 'bold', margin: 0 },
-  mainContent: { flex: 1, overflowY: 'auto', paddingBottom: '80px' },
-  featuredSection: { padding: '10px 0' },
-  horizontalScroll: { display: 'flex', overflowX: 'auto', gap: '15px', padding: '0 20px', scrollSnapType: 'x mandatory' },
-  bigSquare: { minWidth: '280px', height: '200px', backgroundColor: '#333', borderRadius: '15px', color: '#fff', position: 'relative', overflow: 'hidden', scrollSnapAlign: 'start', flexShrink: 0 },
-  imagePlaceholder: { height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#444' },
-  featuredInfo: { position: 'absolute', bottom: 0, left: 0, right: 0, padding: '15px', background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' },
-  divider: { border: 'none', borderBottom: '1px solid #eee', margin: '10px 20px' },
-  pillContainer: { display: 'flex', gap: '10px', overflowX: 'auto', padding: '10px 20px' },
-  pillActive: { backgroundColor: '#000', color: '#fff', padding: '8px 18px', borderRadius: '20px', fontSize: '13px' },
-  pill: { border: '1px solid #ddd', padding: '8px 18px', borderRadius: '20px', fontSize: '13px' },
-  eventList: { padding: '0 20px' }
-};
-
 export default Dashboard;
