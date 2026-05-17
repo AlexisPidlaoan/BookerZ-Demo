@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EventCard, EventDetails } from './Event';
 import Notifications from './Notifications';
+import Tickets from './Tickets'; // New Import
 import Sidebar from './Sidebar';
 import BottomNav from './BottomNav';
 import EventCalendar from './EventCalendar';
@@ -21,16 +22,21 @@ const Dashboard = () => {
   const categories = ["Music", "Art", "Recital", "Tea Party", "Car Show"];
 
   const renderContent = () => {
+    // If a user selects an event from Explore, show details regardless of current tab
+    if (currentPage === 'details' && selectedEvent) {
+      return <EventDetails event={selectedEvent} onBack={() => setCurrentPage('explore')} />;
+    }
+
     switch (currentPage) {
       case 'calendar':
         return <EventCalendar onBack={() => setCurrentPage('explore')} />;
       
       case 'notifications':
         return <Notifications onBack={() => setCurrentPage('explore')} />;
-      
-      case 'details':
-        return <EventDetails event={selectedEvent} onBack={() => setCurrentPage('explore')} />;
 
+      case 'tickets':
+        return <Tickets onBack={() => setCurrentPage('explore')} />;
+      
       case 'profile':
         return (
           <div className="profile-container">
