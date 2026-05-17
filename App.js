@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
+import './styles.css'; // Add this line
 import LogIn from './Login';
 import Dashboard from './Dashboard';
 
 function App() {
-  // Global state to track if Alexis is logged in
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div className="App">
+    <div className="app-frame"> {/* Changed from style to className */}
       {isLoggedIn ? (
-        // Once logged in, show the main app hub
         <Dashboard />
       ) : (
-        // Show Login screen first
         <LogIn onLogin={() => setIsLoggedIn(true)} />
       )}
     </div>
   );
 }
-
-export default App;
