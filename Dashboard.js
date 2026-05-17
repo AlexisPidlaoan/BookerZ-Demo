@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { EventCard, EventDetails } from './Event';
-import Notifications from './Notifications';
+import Notifications from './NotificationsNew';
 import Tickets from './Tickets'; // New Import
 import Sidebar from './Sidebar';
 import BottomNav from './BottomNav';
@@ -110,11 +110,13 @@ const Dashboard = () => {
         onNavigate={(target) => setCurrentPage(target)}
       />
       {renderContent()}
-      <BottomNav 
-        currentPage={currentPage}
-        onMenuClick={() => setIsSidebarOpen(true)}
-        onNavigate={(page) => setCurrentPage(page)}
-      />
+      {currentPage !== 'notifications' && (
+        <BottomNav 
+          currentPage={currentPage}
+          onMenuClick={() => setIsSidebarOpen(true)}
+          onNavigate={(page) => setCurrentPage(page)}
+        />
+      )}
     </div>
   );
 };
