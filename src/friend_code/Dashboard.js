@@ -3,10 +3,6 @@ import { EventCard, EventDetails } from './Event';
 import Sidebar from './Sidebar';
 import BottomNav from './BottomNav';
 import EventCalendar from './EventCalendar';
-import Tickets from './Tickets';
-import Notifications from './Notifications';
-import Profile from './profile';
-import './styles.css';
 
 const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState('explore');
@@ -30,16 +26,6 @@ const Dashboard = () => {
       
       case 'details':
         return <EventDetails event={selectedEvent} onBack={() => setCurrentPage('explore')} />;
-
-      case 'tickets':
-        return <Tickets onBack={() => setCurrentPage('explore')} />;
-
-      case 'notifications':
-        return <Notifications onBack={() => setCurrentPage('explore')} />;
-
-      case 'settings':
-      case 'profile':
-        return <Profile onBack={() => setCurrentPage('explore')} />;
 
       case 'explore':
       default:
